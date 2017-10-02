@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        // replace with the current version of the Android plugin
+        classpath "com.android.tools.build:gradle:2.3.3"
+        classpath "org.greenrobot:greendao-gradle-plugin:3.2.2"
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: "com.android.application"
+apply plugin: "org.greenrobot.greendao"
+
+def AAVersion = "4.3.1" // change this to your desired version, for example the latest stable: 4.3.1
+dependencies {
+    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    annotationProcessor "org.androidannotations:roboguice:$AAVersion"
+    compile "org.androidannotations:roboguice-api:$AAVersion"
+    compile "org.roboguice:roboguice:3.0.1"
+    compile "org.greenrobot:greendao:3.2.2"
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.0"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 25
+
+        // If you have different applicationIds for buildTypes or productFlavors uncomment this block.
+        //javaCompileOptions {
+        //    annotationProcessorOptions {
+        //        arguments = ['resourcePackageName': "org.androidannotations.sample"]
+        //    }
+        //}
+    }
+}

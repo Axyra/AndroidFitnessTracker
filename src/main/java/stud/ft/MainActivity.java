@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import com.google.inject.Inject;
 
@@ -25,7 +26,7 @@ import stud.ft.services.Greeter;
 
 @EActivity(R.layout.main_activity)
 @RoboGuice
-public class MainActivity extends Activity implements SensorEventListener {
+public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
     @SystemService
     SensorManager manager;

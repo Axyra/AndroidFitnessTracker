@@ -9,6 +9,7 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:name=".application.FitnessApp_"
+        android:theme="@style/AppTheme"
         >
         <meta-data android:name="roboguice.modules" android:value="stud.ft.application.AppModule"/>
         <activity

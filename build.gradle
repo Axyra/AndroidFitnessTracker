@@ -26,6 +26,7 @@ dependencies {
     compile "org.androidannotations:roboguice-api:$AAVersion"
     compile "org.roboguice:roboguice:3.0.1"
     compile "org.greenrobot:greendao:3.2.2"
+    compile 'com.android.support:appcompat-v7:26.+'
 }
 
 android {
@@ -33,7 +34,7 @@ android {
     buildToolsVersion "26.0.0"
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 25
 
         // If you have different applicationIds for buildTypes or productFlavors uncomment this block.

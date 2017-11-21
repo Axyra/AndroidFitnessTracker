@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onResume() {
         super.onResume();
 
-        Sensor acc = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        Sensor acc = manager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         manager.registerListener(this, acc, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         float[] values = sensorEvent.values;
-        String text = "Accelerometer[x =" + Float.toString(values[0]) + "; y = " + Float.toString(values[1]) + "; z = " + Float.toString(values[2]) +"]";
-        textView.setText(text);
+        textView.setText("Steps:" + Float.toString(values[0]));
     }
 
     @Override
